@@ -1,4 +1,4 @@
-# Starboard - Scuttlebot distributed social networking in your terminal
+# Starboard - Scuttlebot distributed social in your terminal
 
 Write a few queries and prompts to make it easier to onboard people to sbot from their terminals.
 
