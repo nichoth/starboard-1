@@ -5,6 +5,7 @@
   "main": "publish.js",
   "dependencies": {
     "moment": "^2.15.0",
+    "promptly": "^2.1.0",
     "pull-paramap": "^1.1.6",
     "pull-stream": "^3.4.5",
     "ssb-avatar": "^0.1.0",
@@ -25,6 +26,6 @@
     "cli",
     "commandline"
   ],
-  "author": "ev bogue",
+  "author": "Ev Bogue <ev@evbogue.com>",
   "license": "MIT"
 }
