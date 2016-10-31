@@ -29,6 +29,7 @@ var listMessages = function () {
     	' ' +
     	chalk.dim(moment(msg.value.timestamp).fromNow())
     	)
+        sbot.close();
       })
       )
     })
