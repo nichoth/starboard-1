@@ -8,11 +8,11 @@ Please include lots of animated terminal gifs for best effect
 
 	node publish
 
-![publish](https://gitmx.com/%25xlq5asZ5e%2Ba1QcSBPw19WAm9uUOXHkdhTxxqz9CaInk%3D.sha256/raw/master/publish.gif)
+![publish](publish.gif)
 
 ### Seven
 
 	node seven
 
-![seven](https://gitmx.com/%25xlq5asZ5e%2Ba1QcSBPw19WAm9uUOXHkdhTxxqz9CaInk%3D.sha256/raw/master/seven.gif)
+![seven](seven.gif)
 
