@@ -6,13 +6,35 @@ Please include lots of animated terminal gifs for best effect
 
 ### Publish
 
-	node publish
+```
+node publish
+```
 
 ![publish](publish.gif)
 
 ### Seven
 
-	node seven
+```
+node seven
+```
 
 ![seven](seven.gif)
 
+### Short
+
+```
+node short
+```
+
+![short](short.gif)
+
+### X
+
+Takes two arguments. the first is how many, the second is the post time (right now only votes and posts work)
+
+```
+node x 25 post
+node x 65 vote
+```
+
+![x](x.gif)
