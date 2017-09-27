@@ -2,7 +2,7 @@ var pull = require('pull-stream');
 var paramap = require('pull-paramap');
 var ssbClient = require('ssb-client');
 var chalk = require('chalk');
-var moment = require('moment');
+var human = require('human-time');
 var avatar = require('ssb-avatar');
 
 var listMessages = function () {
@@ -27,7 +27,7 @@ var listMessages = function () {
     	' ' +
     	msg.value.content.text +
     	' ' +
-    	chalk.dim(moment(msg.value.timestamp).fromNow())
+    	chalk.dim(human(new Date(msg.value.timestamp)))
     	)
         sbot.close();
       })
