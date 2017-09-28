@@ -16,7 +16,7 @@ var listMessages = function () {
       pull(
         sbot.messagesByType({
           type: type || 'post',
-    	  limit: Number(number) || 25,
+    	  limit: Number(number) || 44,
           reverse: true
         }),
         paramap(function getAvatar(msg, cb) {
@@ -50,6 +50,7 @@ var listMessages = function () {
           } else {
             console.log(msg.value.content)
           }
+          sbot.close()
         })
       )
     })
