@@ -10,11 +10,12 @@ module.exports = function (msg) {
 
   if (msg.value.content.type === 'post') {
     console.log(
+      chalk.dim(msg.key) + '\n' +
       chalk.cyan('@' + msg.avatar.name) +
       ' ' + msgRoot + ' ' + 
       msg.value.content.text +
       ' ' +
-      chalk.dim(human(new Date(msg.value.timestamp)))
+      chalk.dim(human(new Date(msg.value.timestamp))) + '\n---'
     )
   } else if (msg.value.content.type === 'vote') {
     console.log(
