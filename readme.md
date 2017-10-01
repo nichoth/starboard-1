@@ -20,6 +20,14 @@ node seven
 
 ![seven](seven.gif)
 
+### All Short
+
+```
+node allshort
+```
+
+![allshort](allshort.gif)
+
 ### Short
 
 ```

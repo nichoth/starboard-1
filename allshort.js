@@ -25,7 +25,7 @@ var listMessages = function () {
           })
         }),
         pull.drain(function (msg) {
-           render(msg)
+           render.shorter(msg)
            sbot.close()
         })
       )

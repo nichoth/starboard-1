@@ -1,9 +1,8 @@
 var pull = require('pull-stream')
 var paramap = require('pull-paramap')
 var ssbClient = require('ssb-client')
-var chalk = require('chalk')
-var human = require('human-time')
 var avatar = require('ssb-avatar')
+var render = require('./render')
 
 var listMessages = function () {
   var number = process.argv[2]
@@ -27,27 +26,7 @@ var listMessages = function () {
           })
         }),
         pull.drain(function (msg) {
-          if (type === 'post') {
-            console.log(
-              chalk.cyan('@' + msg.avatar.name) +
-              ' ' +
-              msg.value.content.text +
-              ' ' +
-              chalk.dim(human(new Date(msg.value.timestamp)))
-            ) 
-          } else if (type === 'vote') {
-            if (msg.value.content.vote.link) {
-              console.log(
-                chalk.cyan('@' + msg.avatar.name) +
-                ' dug ' +
-                msg.value.content.vote.link +
-                ' ' +
-                chalk.dim(human(new Date(msg.value.timestamp)))
-              )
-            }
-          } else {
-            console.log(msg.value.content)
-          }
+          render(msg)
         })
       )
     })

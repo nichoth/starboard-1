@@ -3,6 +3,32 @@ var human = require('human-time')
 
 module.exports = function (msg) {
 
+  if (msg.value.content.root) {
+    msgRoot = 're: ' + msg.value.content.root
+  } else { msgRoot = ''}
+
+
+  if (msg.value.content.type === 'post') {
+    console.log(
+      chalk.cyan('@' + msg.avatar.name) +
+      ' ' + msgRoot + ' ' + 
+      msg.value.content.text +
+      ' ' +
+      chalk.dim(human(new Date(msg.value.timestamp)))
+    )
+  } else if (msg.value.content.type === 'vote') {
+    console.log(
+      chalk.cyan('@' + msg.avatar.name) +
+      ' dug ' +
+      msg.value.content.vote.link +
+      ' ' +
+      chalk.dim(human(new Date(msg.value.timestamp)))
+    )
+  }
+}
+
+module.exports.shorter = function (msg) {
+
   if (msg.value.content.type === 'post') {
     message = msg.value.content.text
     console.log(
