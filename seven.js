@@ -1,9 +1,8 @@
-var pull = require('pull-stream');
-var paramap = require('pull-paramap');
-var ssbClient = require('ssb-client');
-var chalk = require('chalk');
-var human = require('human-time');
-var avatar = require('ssb-avatar');
+var pull = require('pull-stream')
+var paramap = require('pull-paramap')
+var ssbClient = require('ssb-client')
+var avatar = require('ssb-avatar')
+var render = require('./render')
 
 var listMessages = function () {
   ssbClient(function (err, sbot) {
@@ -19,16 +18,11 @@ var listMessages = function () {
     	avatar(sbot, me.id, msg.value.author, function (err, avatar) {
 	  if (err) throw err
     	    msg.avatar = avatar;
-    	    cb(null, msg);
+    	    cb(null, msg)
     	  })
       }),
       pull.drain(function printMessage(msg) {
-        console.log(chalk.cyan('@' + msg.avatar.name) +
-    	' ' +
-    	msg.value.content.text +
-    	' ' +
-    	chalk.dim(human(new Date(msg.value.timestamp)))
-    	)
+        render(msg)
         sbot.close();
       })
       )
