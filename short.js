@@ -31,7 +31,7 @@ var listMessages = function () {
             message = msg.value.content.text
             console.log(
               chalk.dim(msg.key) + ' | ' +
-              chalk.cyan('@' + msg.avatar.name) +
+              chalk.cyan('@' + msg.avatar.name.substring(0, 15)) +
               ' ' +
               message.replace(/[\n\r]+/g, '').substring(0, 80)  +'...' +
               ' ' +
